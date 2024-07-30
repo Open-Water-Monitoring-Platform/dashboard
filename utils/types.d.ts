@@ -1,4 +1,4 @@
-export interface Device {
+interface Device {
     default: boolean;
     deviceId: number;
     device_enabled: boolean;
@@ -15,7 +15,7 @@ export interface Device {
     userId: string;
 }
 
-export interface SelectedDeviceData {
+interface SelectedDeviceData {
     deviceId: number;
     flag: number;
     id: string;
@@ -28,19 +28,23 @@ export interface SelectedDeviceData {
     turbidityVoltage: number;
     resistivity: number;
     salinity: number;
+    do: number;
+    orp: number;
     ec: number;
     date: string;
     time: string;
 }
 
 
-export type WaterQualityData = {
+type WaterQuantityData = {
     date: string;
     time: string;
-    tds: number;
-    turbidity: number;
-    ph: number;
-    ec: number;
-    temperature: number;
-    summary: string;
+    fr: number;
+    cv: number;
+    depth: number;
 };
+
+interface GraphData {
+    date: string;
+    value: number;
+  }

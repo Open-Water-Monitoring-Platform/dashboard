@@ -17,10 +17,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { WaterQualityData } from "@/utils/types";
 
 
-export const columns: ColumnDef<WaterQualityData>[] = [
+export const columns: ColumnDef<WaterQuantityData>[] = [
   {
     accessorKey: "date",
     header: "Date",
@@ -56,7 +55,7 @@ export const columns: ColumnDef<WaterQualityData>[] = [
 ];
 
 interface DataTableProps {
-  data: WaterQualityData[];
+  data: WaterQuantityData[];
 }
 
 
