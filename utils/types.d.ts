@@ -25,8 +25,6 @@ interface SelectedDeviceData {
     temperature: number;
     timestamp: number;
     turbidity: number;
-    turbidityVoltage: number;
-    resistivity: number;
     salinity: number;
     do: number;
     orp: number;

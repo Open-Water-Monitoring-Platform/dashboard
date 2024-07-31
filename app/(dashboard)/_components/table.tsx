@@ -45,13 +45,18 @@ export const columns: ColumnDef<WaterQuantityData>[] = [
     header: "EC",
   },
   {
+    accessorKey: "do",
+    header: "do",
+  },
+  {
+    accessorKey: "orp",
+    header: "orp",
+  },
+  {
     accessorKey: "temperature",
     header: "Temperature",
   },
-  {
-    accessorKey: "summary",
-    header: "Summary",
-  },
+
 ];
 
 interface DataTableProps {

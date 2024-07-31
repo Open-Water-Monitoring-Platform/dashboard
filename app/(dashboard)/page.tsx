@@ -2,6 +2,7 @@
 import DataGraph from "./_components/data-graph";
 import { useGlobalContext } from "@/context";
 import { DataTable } from "./_components/table";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 interface ParameterCardProps {
   title: string;
@@ -16,18 +17,40 @@ const ParameterCard: React.FC<ParameterCardProps> = ({ title, value }) => (
 );
 
 const Home: React.FC = () => {
-  const { selectedDeviceData, graph, handleGraphChange, tableData } = useGlobalContext()
+  const { selectedDeviceData, graph, handleGraphChange, tableData, setSelectedDevice, devices } = useGlobalContext()
+
+  const handleDeviceChange = (deviceId: string) => {
+    const selectedDevice = devices.find(device => device.deviceId.toString() === deviceId);
+    if (selectedDevice) {
+      setSelectedDevice(selectedDevice);
+    }
+  };
 
   return (
     <main className="bg-[#F9F9F9] min-h-screen overflow-y-scroll px-4 md:px-8 lg:px-20 py-5">
 
-      <div className="flex mt-[110px] md:mt-24 flex-row justify-between items-center">
-        <span className="space-y-1 md:space-y-2 mb-4 md:mb-0">
-          <h2 className="text-xl md:text-3xl lg:text-4xl font-bold">Dashboard</h2>
+      <div className="flex mt-5 md:mt-10 flex-row justify-between items-center">
+        <span className="flex items-center justify-between w-full mb-4 md:mb-0">
+          <h2 className="text-xl md:text-3xl text-[#50A0EF] lg:text-4xl font-bold">Dashboard</h2>
           {selectedDeviceData &&
             <h3 className="text-xs md:text-base">Last updated: {selectedDeviceData.date}, {selectedDeviceData.time}</h3>
           }
         </span>
+      </div>
+
+      <div className="mt-4 lg:hidden">
+        <Select onValueChange={handleDeviceChange}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Select Device" />
+          </SelectTrigger>
+          <SelectContent>
+            {devices.map((device) => (
+              <SelectItem key={device.deviceId} value={device.deviceId.toString()}>
+                {device.deviceId}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="flex flex-col md:flex-row mt-4 md:mt-10 gap-4 md:gap-6">
