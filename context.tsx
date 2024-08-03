@@ -1,5 +1,4 @@
 'use client'
-'use client'
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -148,6 +147,7 @@ export function GlobalContextProvider({ children }: { children: React.ReactNode 
           value: Number(entry.tds.toFixed(2))
         }));
         setGraph(tdsGraphData);
+
       }
     } catch (error) {
       console.error("Error fetching device data:", error);

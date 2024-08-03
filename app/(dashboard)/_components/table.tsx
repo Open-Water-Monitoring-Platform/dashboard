@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/table";
 
 
-export const columns: ColumnDef<WaterQuantityData>[] = [
+export const columns: ColumnDef<SelectedDeviceData>[] = [
   {
     accessorKey: "date",
     header: "Date",
@@ -60,7 +60,7 @@ export const columns: ColumnDef<WaterQuantityData>[] = [
 ];
 
 interface DataTableProps {
-  data: WaterQuantityData[];
+  data: SelectedDeviceData[];
 }
 
 

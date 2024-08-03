@@ -34,14 +34,6 @@ interface SelectedDeviceData {
 }
 
 
-type WaterQuantityData = {
-    date: string;
-    time: string;
-    fr: number;
-    cv: number;
-    depth: number;
-};
-
 interface GraphData {
     date: string;
     value: number;

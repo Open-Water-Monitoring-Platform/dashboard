@@ -21,7 +21,7 @@ const DataGraph = ({ graph, handleGraphChange }: DataGraphProps) => {
     }
 
     return (
-        <div className='bg-white border border-[#F0F0F0] rounded-2xl lg:px-2 py-5' >
+        <div className='bg-white rounded-2xl lg:px-2 py-5' >
             <div className='flex flex-row items-center justify-between px-4' >
                 <h2>Chart</h2>
                 <Select onValueChange={handleSelectChange} defaultValue="tds">
